@@ -1,12 +1,12 @@
 ---
 import Header from "../components/Header.astro";
-import theme from "../data/theme";
+import Footer from "../components/Footer.astro";
 import SEOTags from "../components/seo/SEOTags.astro";
 
 import type { HeadTags } from "../utils/types/HeadTags";
 
-// Supports weights 300-800
 import "@fontsource-variable/open-sans";
+import "@fontsource/satisfy";
 import "../styles/tailwind.css";
 import "../styles/post.css";
 
@@ -20,7 +20,7 @@ const headTags = Astro.props;
 	<SEOTags {...headTags} />
 
 	<body
-		class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-20 bg-mainBG px-10 py-8 text-gray-300 md:py-16"
+		class="mx-auto flex min-h-screen max-w-[872px] flex-col bg-mainBG px-10 py-8 text-gray-300 md:pt-16 md:pb-10"
 	>
 		<Header />
 		<slot />

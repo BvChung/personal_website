@@ -1,13 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import PostCard from "../components/PostCard.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import Link from "../components/Link.astro";
-import convertAsteriskToStrongTag from "../utils/convertAsteriskToStrongTag";
-import { content } from "../data/content";
+import SocialLinks from "../components/SocialLinks.astro";
 import projects from "../data/projects";
+import Footer from "../components/Footer.astro";
 
 const posts = (await getCollection("posts")).sort(function (first, second) {
 	return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
@@ -15,24 +12,12 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 ---
 
 <Layout>
-	<main class="flex flex-col gap-20">
+	<main class="flex flex-col gap-20 flex-1">
 		<article
 			class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12"
 		>
-			{
-				content.profile && (
-					<Image
-						src={content.profile}
-						class="w-1/4 self-center rounded-full"
-						alt="Your Profile"
-						width="200"
-						height="200"
-					/>
-				)
-			}
-
 			<div>
-				<h1 class="text-3xl font-semibold text-white mb-8">
+				<h1 class="text-3xl font-semibold text-neutral-50 mb-8">
 					Hello there, my name is Brandon 👋
 				</h1>
 
@@ -49,15 +34,19 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 
 		<article class="flex flex-col gap-8">
 			<header class="flex w-full flex-row items-center justify-between gap-2">
-				<h1 class="text-2xl font-semibold text-white">Experience</h1>
+				<h1 class="text-2xl font-semibold text-neutral-50">Experience</h1>
 			</header>
 
 			<section class="border-l-2 border-yellow-600 pl-4">
-				<div class="flex justify-between items-center mb-3 font-medium">
+				<div
+					class="flex flex-col gap-2 md:gap-0 md:flex-row md:justify-between md:items-center mb-3 font-medium"
+				>
 					<h3 class="text-neutral-100">
 						CougarCS | Web Development Team Member
 					</h3>
-					<p>Fall 2022 - Present</p>
+					<p class="text-sm md:text-base text-neutral-200">
+						Fall 2022 - Present
+					</p>
 				</div>
 
 				<p class="leading-6 text-neutral-300 text-sm">
@@ -70,7 +59,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 
 		<article class="flex flex-col gap-8">
 			<header class="flex w-full flex-row justify-between gap-2">
-				<h1 class="text-2xl font-semibold text-white">Projects</h1>
+				<h1 class="text-2xl font-semibold text-neutral-50">Projects</h1>
 			</header>
 
 			<section class="flex flex-col gap-4">
@@ -80,17 +69,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 				}
 			</section>
 		</article>
-
-		<article class="flex flex-col gap-8">
-			<header class="flex w-full flex-row justify-between gap-2">
-				<h3 class="text-lg text-neutral-100">Get in touch</h3>
-			</header>
-			<p>
-				Email me at <Link
-					href={`mailto:${content.mail}`}
-					label={content.mail}
-				/> or follow me via my social links.
-			</p>
-		</article>
 	</main>
+
+	<Footer />
 </Layout>

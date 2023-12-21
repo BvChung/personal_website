@@ -14,12 +14,20 @@
 	@apply mb-2 text-xl font-medium text-neutral-100;
 }
 
+.post h4 {
+	@apply mb-2 text-base font-medium text-neutral-100;
+}
+
 .post a {
 	@apply text-neutral-100 underline;
 }
 
-.post ul {
-	@apply list-disc;
+.post ul li {
+	@apply list-disc text-sm text-neutral-300;
+}
+
+.post ul li a {
+	@apply text-neutral-200;
 }
 
 .post blockquote {
