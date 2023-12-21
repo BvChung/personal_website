@@ -1,0 +1,47 @@
+.post p {
+	@apply mb-2 leading-relaxed;
+}
+
+.post h1 {
+	@apply mb-3 text-4xl font-semibold text-neutral-100;
+}
+
+.post h2 {
+	@apply mb-3 text-2xl font-semibold text-neutral-100;
+}
+
+.post h3 {
+	@apply mb-2 text-xl font-medium text-neutral-100;
+}
+
+.post a {
+	@apply text-neutral-100 underline;
+}
+
+.post ul {
+	@apply list-disc;
+}
+
+.post blockquote {
+	@apply border-l-4 border-blockSide bg-blockBG px-4 py-3;
+}
+
+.post blockquote p {
+	@apply mb-0;
+}
+
+.post pre {
+	@apply p-4;
+}
+
+.post pre > code {
+	@apply bg-transparent;
+}
+
+.post img {
+	@apply mx-auto rounded-md shadow;
+}
+
+.post ul {
+	@apply flex flex-col gap-2 pl-6 mb-6;
+}

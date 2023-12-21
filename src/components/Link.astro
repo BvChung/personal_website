@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a"> & {
+	label: string;
+	isUnderline?: boolean;
+};
+
+const { label, ...props } = Astro.props;
+---
+
+<a
+	href={props.href}
+	class="cursor-pointer hover:text-secondary2 hover:underline hover:underline-offset-4"
+	{...props}
+	rel="noreferrer"
+	target="_blank"
+>
+	{label}
+	<span class="sr-only">{label} link</span>
+</a>
