@@ -1,18 +1,11 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import SocialLinks from "../components/SocialLinks.astro";
 import projects from "../data/projects";
-import Footer from "../components/Footer.astro";
-
-const posts = (await getCollection("posts")).sort(function (first, second) {
-	return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
-});
 ---
 
 <Layout>
-	<main class="flex flex-col gap-20 flex-1">
+	<main class="flex flex-col gap-20 flex-1 mb-20">
 		<article
 			class="flex flex-col gap-8 md:flex-row-reverse md:justify-end md:gap-12"
 		>
@@ -70,6 +63,4 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
 			</section>
 		</article>
 	</main>
-
-	<Footer />
 </Layout>

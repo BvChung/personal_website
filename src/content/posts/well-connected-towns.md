@@ -1,22 +1,19 @@
 ---
 title: "Graphs | Solving Well Connected Towns"
-publishedAt: 2023-12-17
+publishedDate: 2023-12-17
+publishedTime: "3:55 PM"
 description: "Modified BFS algorithm with min heap."
 slug: "well-connected-towns"
-isPublish: true
 ---
 
-## Well Connected Towns
+# Well Connected Towns
 
-<p class="mb-4">
-Suppose we have an undirected graph G representing m roads (edges) connecting n towns (nodes), with edge weights describing the distances along the road in miles. 
-Some of these towns have a bus station (call the number of towns with bus stations b). 
-Each town with a bus station has buses that travel from that town along the roads, and have a one-way range of d miles: every town within d miles of road travel from this town through any number of other towns is reachable. 
+Suppose we have an undirected graph G representing m roads (edges) connecting n towns (nodes), with edge weights describing the distances along the road in miles.
+Some of these towns have a bus station (call the number of towns with bus stations b).
+Each town with a bus station has buses that travel from that town along the roads, and have a one-way range of d miles: every town within d miles of road travel from this town through any number of other towns is reachable.
 A town is well-connected if it is reachable by bus from at least k towns (including itself, if it has a bus station) for some fixed number k.
 Given G, the list of b towns with bus stations, d, and k, determine the number of well-connected towns.
-</p>
 
-<p>
 All graphs will be given with nodes numbered from 0 to n-1, and edges will be provided in a list. For the above:
 
 n - number of towns in the graph (integer)
@@ -33,17 +30,13 @@ You may assume that all edge weights are greater than 0. The graph may not be co
 
 n > b >= k
 
-</p>
-
 ![Example](../../images/well_connected_towns_example.png)
 
-<div class="text-sm mt-2 mb-6">In the above example nodes 0 and 6 are towns with bus stations.</div>
+_In the above example nodes 0 and 6 are towns with bus stations._
 
 ---
 
-<div class="mb-2"></div>
-
-### Approach
+# Approach
 
 A town is well-connected if at least k towns with bus stations are within a one-way travel distance of d.
 We use a modified version of BFS similar to Djikstra's algorithm using a min heap to choose the path with minimal cost.

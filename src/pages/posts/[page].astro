@@ -1,0 +1,102 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { Page } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+
+export async function getStaticPaths({ paginate }) {
+	const posts = (await getCollection("posts")).sort(function (first, second) {
+		return (
+			second.data.publishedDate.getTime() - first.data.publishedDate.getTime()
+		);
+	});
+
+	return paginate(posts, { pageSize: 5 });
+}
+
+type Props = {
+	page: Page;
+};
+
+const { page } = Astro.props;
+---
+
+<Layout title="All Posts">
+	<h1 class="mb-12 text-3xl tracking-tight font-semibold text-white">Posts</h1>
+	<main class="flex flex-col flex-1 justify-between mb-12">
+		<div class="mb-8">
+			<article class="gap-5 flex flex-col">
+				{
+					page.data.map(({ data, slug }: CollectionEntry<"posts">) => (
+						<PostCard
+							slug={slug}
+							description={data.description}
+							title={data.title}
+							publishedDate={data.publishedDate}
+						/>
+					))
+				}
+			</article>
+		</div>
+
+		{
+			(page.url.prev || page.url.next) && (
+				<div class="flex items-center justify-between gap-4 mt-2">
+					{
+						<a
+							href={page.url.prev}
+							class={`${
+								page.url.prev
+									? "stroke-neutral-100 hover:bg-hoverBG transition-all hover:border-neutral-400"
+									: "pointer-events-none text-neutral-500 stroke-neutral-500 opacity-60"
+							} flex items-center gap-2 border border-neutral-400 px-3 py-1 rounded-md`}
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-arrow-narrow-left h-7 w-7"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M5 12l14 0" />
+								<path d="M5 12l4 4" />
+								<path d="M5 12l4 -4" />
+							</svg>
+							<p class="font-medium text-sm">Previous</p>
+						</a>
+					}
+
+					{
+						<a
+							href={page.url.next}
+							class={`${
+								page.url.next
+									? "stroke-neutral-100 hover:bg-hoverBG transition-all hover:border-neutral-400"
+									: "pointer-events-none text-neutral-500 stroke-neutral-500 opacity-60"
+							} flex items-center gap-2 border border-neutral-400 px-3 py-1 rounded-md `}
+						>
+							<p class="font-medium">Next</p>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-arrow-narrow-right h-7 w-7"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<path d="M5 12l14 0" />
+								<path d="M15 16l4 -4" />
+								<path d="M15 8l4 4" />
+							</svg>
+						</a>
+					}
+				</div>
+			)
+		}
+	</main>
+</Layout>

@@ -3,7 +3,7 @@ import type { Project } from "../data/projects";
 
 type Props = Project;
 
-const { title, tech, link, description, isComingSoon } = Astro.props;
+const { title, tech, link, description } = Astro.props;
 
 const formatTech = (values: string[]) =>
 	values.toString().replaceAll(",", " • ");
