@@ -10,8 +10,8 @@ const config: Config = {
 			},
 			colors: {
 				mainText: "#e3ad39",
-				mainBG: "#212131",
-				hoverBG: "#2B2836",
+				mainBG: "#1F212C",
+				hoverBG: "#26202D",
 				hoverBG2: "#494556",
 				blockBG: "#282A36",
 				blockSide: "#655E7F",

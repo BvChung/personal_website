@@ -15,10 +15,10 @@ const projects: Project[] = [
 	},
 	{
 		title: "Personal Website",
-		tech: ["Astro", "TypeScript"],
+		tech: ["Astro", "TypeScript", "Tailwind CSS"],
 		link: "https://github.com/BvChung/personal_website",
 		description:
-			"This website! Posts are written in Markdown and integrated through Astro.",
+			"This website! Posts are written in Markdown styled with CSS and integrated through Astro.",
 	},
 	{
 		title: "Google Sheets Autobot",

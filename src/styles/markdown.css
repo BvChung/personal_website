@@ -1,5 +1,5 @@
 .markdown p {
-	@apply text-neutral-300 mb-4 leading-8;
+	@apply text-neutral-200 mb-4 leading-8;
 }
 
 .markdown h1 {
@@ -19,7 +19,7 @@
 }
 
 .markdown hr {
-	@apply mt-8 mb-8 border-neutral-600;
+	@apply mt-10 mb-10 border-neutral-600;
 	border-width: 1px; /* Adjust this value to increase or decrease the height */
 }
 
@@ -36,6 +36,14 @@
 	text-decoration: none;
 }
 
+.markdown ol {
+	@apply ml-0;
+}
+
+.markdown ol li {
+	@apply list-decimal text-neutral-300 mb-[2px] last:mb-0;
+}
+
 .markdown blockquote {
 	@apply border-l-4 border-blockSide bg-blockBG px-4 py-3;
 }
@@ -46,10 +54,6 @@
 
 .markdown pre {
 	@apply p-4 my-6 rounded-md;
-}
-
-.markdown pre > code {
-	@apply bg-transparent;
 }
 
 .markdown img {
@@ -64,6 +68,6 @@
 	@apply text-sm text-neutral-300 mb-2;
 }
 
-.markdown code {
-	@apply text-red-400;
+.markdown code:not(pre code) {
+	@apply text-sm text-cyan-400 bg-blockBG px-1 py-[2px] rounded-sm;
 }
