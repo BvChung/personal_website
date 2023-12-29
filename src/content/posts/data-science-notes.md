@@ -1,9 +1,9 @@
 ---
-title: "Graphs | Solving Graph HW Well Connected Towns"
-publishedDate: 2023-12-17
+title: "Data Science Notes"
+publishedDate: 2023-12-28
 publishedTime: "3:55 PM"
-description: "Modified BFS algorithm with min heap."
-slug: "well-connected-towns"
+description: "Notes to review on a later date."
+slug: "data-science-notes"
 ---
 
 Suppose we have an undirected graph G representing m roads (edges) connecting n towns (nodes), with edge weights describing the distances along the road in miles.
