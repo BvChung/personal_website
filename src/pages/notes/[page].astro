@@ -5,13 +5,13 @@ import Layout from "../../layouts/Layout.astro";
 import MarkdownLinkCard from "../../components/MarkdownLinkCard.astro";
 
 export async function getStaticPaths({ paginate }) {
-	const posts = (await getCollection("posts")).sort(function (first, second) {
+	const notes = (await getCollection("notes")).sort(function (first, second) {
 		return (
 			second.data.publishedDate.getTime() - first.data.publishedDate.getTime()
 		);
 	});
 
-	return paginate(posts, { pageSize: 5 });
+	return paginate(notes, { pageSize: 5 });
 }
 
 type Props = {
@@ -22,14 +22,14 @@ const { page } = Astro.props;
 ---
 
 <Layout title="All Posts">
-	<h1 class="mb-12 text-3xl tracking-tight font-semibold text-white">Posts</h1>
+	<h1 class="mb-12 text-3xl tracking-tight font-semibold text-white">Notes</h1>
 	<main class="flex flex-col flex-1 justify-between mb-12">
 		<div class="mb-8">
 			<article class="gap-5 flex flex-col">
 				{
-					page.data.map(({ data, slug }: CollectionEntry<"posts">) => (
+					page.data.map(({ data, slug }: CollectionEntry<"notes">) => (
 						<MarkdownLinkCard
-							path="posts"
+							path="notes"
 							slug={slug}
 							description={data.description}
 							title={data.title}

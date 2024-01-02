@@ -34,13 +34,9 @@ _In the above example nodes 0 and 6 are towns with bus stations._
 
 ---
 
-# Approach
+# Linear Regression
 
-A town is well-connected if at least k towns with bus stations are within a one-way travel distance of d.
-We can solve this problem using a modified version of BFS similar to Djikstra's algorithm using a min heap to choose the path with minimal cost.
-A hashmap is used to keep track of the town and count of how many distinct bus station towns can reach this town `{town : n distinct bus stations}`. We initialize this algorithm by setting up an adjacency list with inputted edges. Given the nodes of towns of bus stations we iterate through the array and apply our djikstra helper function.
-In the helper function, the min heap will repeatedly pop the current minimum cost path, increment the respective town's count of distinct bus stations in the hashmap and append the neighboring towns & accumulate the total distance travel `[total current accumulated distance traveled, node]`. We repeat this operation until the heap is empty or the accumulated distance is greater than the max distance a bus can travel.
-We then iterate through the hashmap and increment n_well_connected_towns if the number of bus station towns is greater than or equal to k.
+Linear regression is a supervised learning algorithm that is used to predict a continuous variable. It is a linear approach to modeling the relationship between a dependent variable and one or more independent variables. The goal is to minimize the sum of the squared residuals. The sum of squared residuals is the sum of the squared differences between the actual y values and the predicted y values. The residuals are the differences between the actual y values and the predicted y values. The predicted y values are calculated using the equation of the line.
 
 <div class="mb-2"></div>
 
