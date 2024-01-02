@@ -1,0 +1,32 @@
+---
+import { removeTrailingSlash, isPathActive } from "../utils/formatPath";
+import type { Path } from "../types/path";
+
+const pathname = removeTrailingSlash(Astro.url.pathname);
+
+type Props = {
+	pathLinks: Path[];
+};
+
+const { pathLinks } = Astro.props;
+---
+
+<ul role="list" class="flex flex-row gap-5 text-base font-medium">
+        {pathLinks.map((path) => {
+            return (
+            <li>
+                <a
+                    href={path.href}
+                    class:list={[
+                        "text-neutral-50 hover:text-yellow-500",
+                        {
+                            "text-yellow-500 border-b-2 pb-1 border-b-yellow-500": isPathActive(
+                                pathname,
+                                path.basePath
+                            ),
+                        },
+                    ]}
+                    ]}>{path.name}</a>
+            </li>)
+        })}
+</ul>

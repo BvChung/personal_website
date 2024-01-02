@@ -1,25 +1,25 @@
 export function removeTrailingSlash(pathname: string) {
-	const matchTrailingSlash = /\w+\/$/;
+  const matchTrailingSlash = /\w+\/$/;
 
-	if (matchTrailingSlash.test(pathname)) {
-		return pathname.slice(0, -1);
-	}
+  if (matchTrailingSlash.test(pathname)) {
+    return pathname.slice(0, -1);
+  }
 
-	return pathname;
+  return pathname;
 }
 
 export function isPathActive(currentPath: string, targetPath: string): boolean {
-	const parameterSlashIndex = currentPath.lastIndexOf("/");
-	const parameter = currentPath.slice(parameterSlashIndex + 1);
-	const basePath = currentPath.slice(0, parameterSlashIndex);
+  const parameterSlashIndex = currentPath.lastIndexOf("/");
+  const parameter = currentPath.slice(parameterSlashIndex + 1);
+  const basePath = currentPath.slice(0, parameterSlashIndex);
 
-	if (
-		targetPath === basePath &&
-		parameter.length > 0 &&
-		!isNaN(Number(parameter))
-	) {
-		return true;
-	}
+  if (
+    targetPath === basePath &&
+    parameter.length > 0 &&
+    !isNaN(Number(parameter))
+  ) {
+    return true;
+  }
 
-	return currentPath === targetPath;
+  return currentPath === targetPath;
 }
