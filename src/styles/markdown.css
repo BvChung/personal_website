@@ -1,73 +1,73 @@
 .markdown p {
-	@apply text-neutral-200 mb-4 leading-8;
+  @apply text-neutral-200 mb-4 leading-8;
 }
 
 .markdown h1 {
-	@apply mb-4 text-2xl font-medium text-neutral-100;
+  @apply mb-4 text-2xl font-medium text-neutral-100;
 }
 
 .markdown h2 {
-	@apply mb-3 text-xl font-medium text-neutral-200;
+  @apply mb-3 text-xl font-medium text-neutral-200;
 }
 
 .markdown h3 {
-	@apply mb-3 text-lg font-medium text-neutral-200;
+  @apply mb-3 text-lg font-medium text-neutral-200;
 }
 
 .markdown h4 {
-	@apply mb-3 text-base font-medium text-neutral-200;
+  @apply mb-3 text-base font-medium text-neutral-200;
 }
 
 .markdown hr {
-	@apply mt-10 mb-10 border-neutral-600;
-	border-width: 1px; /* Adjust this value to increase or decrease the height */
+  @apply mt-10 mb-10 border-neutral-600;
+  border-width: 1px; /* Adjust this value to increase or decrease the height */
 }
 
 .markdown ul {
-	@apply ml-2;
+  @apply ml-2;
 }
 
 .markdown ul li {
-	@apply list-disc text-neutral-300 mb-[2px] last:mb-0;
+  @apply list-disc text-neutral-300 mb-[2px] last:mb-0;
 }
 
 .markdown ul li a {
-	@apply text-neutral-200 border-b border-b-neutral-200 hover:text-yellow-500 hover:border-b-yellow-500;
-	text-decoration: none;
+  @apply text-neutral-200 border-b border-b-neutral-200 hover:text-yellow-500 hover:border-b-yellow-500;
+  text-decoration: none;
 }
 
 .markdown ol {
-	@apply ml-0;
+  @apply ml-0;
 }
 
 .markdown ol li {
-	@apply list-decimal text-neutral-300 mb-[2px] last:mb-0;
+  @apply list-decimal text-neutral-300 mb-[2px] last:mb-0;
 }
 
 .markdown blockquote {
-	@apply border-l-4 border-blockSide bg-blockBG px-4 py-3;
+  @apply border-l-4 border-blockSide bg-blockBG px-4 py-3;
 }
 
 .markdown blockquote p {
-	@apply mb-0;
+  @apply mb-0;
 }
 
 .markdown pre {
-	@apply p-4 my-6 rounded-md;
+  @apply p-4 my-6 rounded-md;
 }
 
 .markdown img {
-	@apply mx-auto rounded-md shadow;
+  @apply mx-auto rounded-md shadow;
 }
 
 .markdown ul {
-	@apply flex flex-col gap-2 pl-6 mb-6;
+  @apply flex flex-col gap-2 pl-6 mb-6;
 }
 
 .markdown span {
-	@apply text-sm text-neutral-300 mb-2;
+  @apply text-sm text-neutral-300 mb-2;
 }
 
 .markdown code:not(pre code) {
-	@apply text-sm text-cyan-400 bg-blockBG px-1 py-[2px] rounded-sm;
+  @apply text-sm text-cyan-400 bg-blockBG px-1 py-[2px] rounded-sm;
 }

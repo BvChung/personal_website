@@ -5,13 +5,13 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [mdx(), tailwind(), sitemap()],
-	site: "https://demo.maxencewolff.com/",
-	markdown: {
-		syntaxHighlight: "shiki",
-		shikiConfig: {
-			theme: "dracula-soft",
-			wrap: true,
-		},
-	},
+  integrations: [mdx(), tailwind(), sitemap()],
+  site: "https://demo.maxencewolff.com/",
+  markdown: {
+    syntaxHighlight: "shiki",
+    shikiConfig: {
+      theme: "dracula-soft",
+      wrap: true,
+    },
+  },
 });

@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 .fancyText {
-	font-family: "Satisfy", sans-serif;
-	font-size: 24px;
+  font-family: "Satisfy", sans-serif;
+  font-size: 24px;
 }
