@@ -1,15 +1,15 @@
 ---
 import { SEO } from "astro-seo";
 import { SITE_URL } from "../../utils/config";
-import type { HeadTags } from "../../utils/types/HeadTags";
+import type { HeadTags } from "../../types/HeadTags";
 
 type Props = HeadTags;
 
 const { title, description, noindex, og } = Astro.props;
 
-const DEFAULT_TITLE_PAGE = "Astro - Portfolio template";
+const DEFAULT_TITLE_PAGE = "Brandon Chung Portfolio";
 const DEFAULT_DESCRIPTION_PAGE =
-	"A minimal portfolio template built with Astro and Tailwindcss.";
+	"A minimalistic portfolio and blog built with Astro and Tailwindcss.";
 const DEFAULT_URL_SITE = SITE_URL;
 
 const openGraph = {
@@ -38,9 +38,6 @@ const openGraph = {
 				alt: openGraph.alt,
 			},
 		}}
-		twitter={{
-			creator: "@itsstormzz_",
-		}}
 		extend={{
 			link: [
 				{ rel: "icon", href: "/favicon.svg" },
@@ -60,4 +57,24 @@ const openGraph = {
 			],
 		}}
 	/>
+
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+		integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+		crossorigin="anonymous"
+	/>
+
+	<script
+		defer
+		src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+		integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+		crossorigin="anonymous"></script>
+
+	<script
+		defer
+		src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+		integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+		crossorigin="anonymous"
+		onload="renderMathInElement(document.body);"></script>
 </head>
