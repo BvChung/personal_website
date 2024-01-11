@@ -20,7 +20,7 @@
 
 .markdown hr {
 	@apply mt-10 mb-10 border-neutral-600;
-	border-width: 1px; /* Adjust this value to increase or decrease the height */
+	border-width: 1px;
 }
 
 .markdown ul {

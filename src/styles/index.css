@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 .fancyText {
-  font-family: "Satisfy", sans-serif;
-  font-size: 24px;
+	font-family: "Satisfy", sans-serif;
+	font-size: 24px;
+}
+
+::-webkit-scrollbar {
+	width: 11px;
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-gray-400;
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-gray-500;
 }

@@ -43,10 +43,10 @@ Regression is a statistical approach for modeling the relationship between a dep
 
 # Ridge Regression
 
-> $$\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p \beta_j^2$$
+> $$min(\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p \beta_j^2)$$
 
-- The main idea behind Ridge regression is to find a new line that doesn't fit the training data as well in other words we introduce a small amount of bias into how the new line is fit to the data but in return for that small amount of bias we get a significant drop in variance in other words by starting with a slightly worse fit Ridge regression can provide better long-term predictions
-- Ridge regression imposes a penalty on the size of the coefficients. The ridge coefficients minimize a penalized residual sum of squares plus $\lambda * slope^2$. Ridge regression can only shrink parameter coefficients asymptotically to zero, but never reach it.
+- The main idea behind Ridge regression is to find a new line that doesn't fit the training data by introducing a small amount of bias into how the new line is fit to the data. In return for that small amount of bias we get a significant drop in variance in other words by starting with a slightly worse fit Ridge regression can provide better long-term predictions
+- Ridge regression imposes a penalty on the size of the coefficients. We minimize a penalized residual sum of squares plus $\lambda * slope^2$. As lamda increases the penalty also increases, in order to minimize the sum of squared residuals we shrink the parameter coefficients which can only asymptotically approach zero.
 - The $\lambda$ parameter controls the amount of shrinkage: the larger the value of $\lambda$, the greater the amount of shrinkage and thus the coefficients become more robust to collinearity.
 - Ridge regression is better when most of the independent variables are useful.
 
@@ -54,9 +54,8 @@ Regression is a statistical approach for modeling the relationship between a dep
 
 # Lasso Regression
 
-> $$\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p |\beta_j|$$
+> $$min(\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p |\beta_j|)$$
 
 - Lasso regression is similar to Ridge regression in that it also introduces a small amount of bias into how the new line is fit to the data but in return for that small amount of bias we get a significant drop in variance in other words by starting with a slightly worse fit Lasso regression can provide better long-term predictions
-- The lambda parameter controls the amount of shrinkage: the larger the value of lambda, the greater the amount of shrinkage. Lasso regression can shrink some coefficients to zero thus removing them from the model.
-- Lasso regression imposes a penalty on the size of the coefficients. The lasso coefficients minimize a penalized residual sum of squares plus $\lambda * slope$
+- Similar to Ridge regression, Lasso regression imposes a penalty on the size of the coefficients. The lasso coefficients minimize a penalized residual sum of squares plus $\lambda * slope$. However, in contrast to Ridge regression, Lasso regression can shrink the coefficients to zero.
 - Lasso Regression tends to make coefficients of less important features zero thus effectively performing feature selection.
