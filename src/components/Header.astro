@@ -1,10 +1,7 @@
 ---
-import { removeTrailingSlash, isPathActive } from "../utils/formatPath";
 import SocialLinks from "./SocialLinks.astro";
 import type { Path } from "../types/path";
 import PathLinks from "./PathLinks.astro";
-
-const pathname = removeTrailingSlash(Astro.url.pathname);
 
 const pathLinks: Path[] = [
 	{

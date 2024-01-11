@@ -4,13 +4,11 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-
-import netlify from "@astrojs/netlify/functions";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [mdx(), tailwind(), sitemap()],
-	site: "https://brandonchung.netlify.app",
 	markdown: {
 		syntaxHighlight: "shiki",
 		shikiConfig: {
@@ -20,6 +18,6 @@ export default defineConfig({
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [rehypeKatex],
 	},
-	output: "server",
+	output: "hybrid",
 	adapter: netlify(),
 });
