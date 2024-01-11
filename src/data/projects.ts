@@ -11,7 +11,7 @@ export const projects: Project[] = [
 		tech: ["Python", "SciKit-Learn", "Pandas", "NumPy"],
 		link: "https://github.com/BvChung/covid-machine-learning-analysis",
 		description:
-			"Machine learning regression models to predict the number of ICU patients with US COVID-19 dataset.",
+			"Machine learning regression models to predict the number of ICU admissions with US COVID-19 dataset.",
 	},
 	{
 		title: "CougarCS Admin Portal",
