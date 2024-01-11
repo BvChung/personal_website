@@ -10,14 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.3.3",
-    "@astrojs/mdx": "^2.0.1",
+    "@astrojs/check": "^0.3.4",
+    "@astrojs/mdx": "^2.0.4",
     "@astrojs/netlify": "^4.1.0",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.3",
     "@fontsource/inter": "^5.0.16",
     "@fontsource/satisfy": "^5.0.18",
-    "astro": "^4.0.6",
+    "astro": "^4.1.2",
     "astro-seo": "^0.8.0",
     "rehype-katex": "^7.0.0",
     "remark-math": "^6.0.0",
