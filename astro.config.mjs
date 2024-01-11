@@ -19,6 +19,6 @@ export default defineConfig({
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [rehypeKatex],
 	},
-	output: "hybrid",
+	output: "static",
 	adapter: netlify(),
 });
