@@ -12,7 +12,7 @@ const config: Config = {
 				mainText: "#e3ad39",
 				mainBG: "#1E1D2A",
 				hoverBG: "#2C2A3D",
-				hoverBG2: "#494556",
+				hoverBG2: "#413E59",
 				blockBG: "#282A36",
 				blockSide: "#655E7F",
 				secondary: "#B6B4CA",

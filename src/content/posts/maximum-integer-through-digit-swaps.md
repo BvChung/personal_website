@@ -2,7 +2,7 @@
 title: "Backtracking | Solving Backtracking HW Digit Swaps"
 publishedDate: 2023-12-25
 publishedTime: "4:55 PM"
-description: "Backtracking algorithm."
+description: "Backtracking algorithm assignment."
 slug: "maximum-integer-through-digit-swaps"
 ---
 

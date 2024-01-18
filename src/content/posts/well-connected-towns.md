@@ -2,7 +2,7 @@
 title: "Graphs | Solving Graph HW Well Connected Towns"
 publishedDate: 2023-12-17
 publishedTime: "3:55 PM"
-description: "Modified BFS algorithm with min heap."
+description: "Modified BFS graph algorithm assignment."
 slug: "well-connected-towns"
 ---
 
