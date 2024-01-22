@@ -6,17 +6,17 @@ description: "Notes about regression models."
 slug: "regression-models"
 ---
 
-Regression is a statistical approach for modeling the relationship between a dependent variable with a set of independent variables. It is a supervised machine learning technique used to make predictions based on a set of features or independent variables in a dataset.
+Regression is a statistical approach used to model the relationship between a dependent variable and a set of independent variables. It is a supervised machine learning technique that makes predictions based on a set of features or independent variables in a dataset.
 
 <br/>
 
 # Ordinary Least Squares Linear Regression
 
-> $$y = B_0 + B_{n}x_{n} + \epsilon$$
+> $$y = B_0 + B_{p}x_{p} + \epsilon$$
 
-- Linear coeefficients ($$B_1x$$) represent the increase or decrease in the dependent variable for a unit change in the independent variable.
-- The intercept ($$B_0$$) represents the mean value of the dependent variable when all independent variables are equal to 0.
-- The error term ($$\epsilon$$) represents the unexplained variation when predicting the dependent variable, which is irreducible since it is out of our control.
+- Linear coefficients ($$B_1x$$) represent the increase or decrease in the dependent variable for each unit change in the independent variable.
+- The intercept ($$B_0$$) represents the average value of the dependent variable when all independent variables are set to 0.
+- The error term ($$\epsilon$$) represents the variation in predicting the dependent variable that cannot be explained or reduced, as it is beyond our control.
 
 # Measuring Performance
 
@@ -33,7 +33,7 @@ Regression is a statistical approach for modeling the relationship between a dep
 
 > $$MSE  = \dfrac 1n \displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2$$
 
-- Mean squared error measures the amount of error in statistical models. It assesses the average squared difference between the observed and predicted values. A good regression model minimizes the MSE.
+- Mean squared error quantifies how well the model is able to predict values based on input feature vectors. It assesses the average squared difference between the actual and estimated values. A lower MSE indicates a better fit of the model to the data.
 
 > $$MAE  = \dfrac 1n \displaystyle\sum_{i = 1}^n |y_{i} - f(x_{i})|$$
 
