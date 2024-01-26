@@ -14,6 +14,7 @@ const config: Config = {
 				hoverBG: "#2C2A3D",
 				hoverBG2: "#413E59",
 				blockBG: "#282A36",
+				smCodeBG: "#343646",
 				blockSide: "#655E7F",
 				secondary: "#B6B4CA",
 				secondary2: "#CBC8D6",

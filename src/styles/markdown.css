@@ -24,7 +24,7 @@
 }
 
 .markdown ul {
-	@apply ml-2;
+	@apply flex flex-col gap-2 pl-6 mb-6;
 }
 
 .markdown ul li {
@@ -37,11 +37,16 @@
 }
 
 .markdown ol {
-	@apply ml-0;
+	@apply flex flex-col gap-2 pl-6 mb-6;
 }
 
 .markdown ol li {
 	@apply list-decimal text-neutral-300 mb-[2px] last:mb-0;
+}
+
+.markdown ol li a {
+	@apply text-neutral-200 border-b border-b-neutral-200 hover:text-yellow-500 hover:border-b-yellow-500;
+	text-decoration: none;
 }
 
 .markdown blockquote {
@@ -64,10 +69,6 @@
 	@apply mx-auto rounded-md shadow;
 }
 
-.markdown ul {
-	@apply flex flex-col gap-2 pl-6 mb-6;
-}
-
 .markdown code:not(pre code) {
-	@apply text-sm text-cyan-500 bg-blockBG px-1 py-[2px] rounded-md;
+	@apply text-sm text-neutral-200 bg-smCodeBG px-1 py-[2px] rounded-md;
 }
