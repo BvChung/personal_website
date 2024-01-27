@@ -216,17 +216,30 @@ column3 datatype,
 column4 datatype
 );`
 
+## Constraints
+
+- NOT NULL: Ensures that a column cannot have a NULL value
+- UNIQUE: Ensures that all values in a column are different
+- PRIMARY KEY: A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+- FOREIGN KEY: Uniquely identifies a row/record in another table
+- CHECK: Ensures that all values in a column satisfies a specific condition
+- DEFAULT: Sets a default value for a column when none is specified
+- INDEX: Used to create and retrieve data from the database very quickly
+
 ```sql
 CREATE TABLE Employees (
-    EmployeeID int NOT NULL,
-    LastName varchar(255) NOT NULL,
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255),
+    ID int NOT NULL,
+    Name varchar(255) NOT NULL,
+    Age int CHECK (Age >= 18),
+    Salary decimal(8, 2) DEFAULT 50000.00,
+    Email varchar(255) UNIQUE,
     DepartmentID int,
-    PRIMARY KEY (EmployeeID),
+    PRIMARY KEY (ID),
     FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 );
+
+CREATE INDEX idx_Employees_Name
+ON Employees (Name);
 ```
 
 ### **ADD**: Adds a column
