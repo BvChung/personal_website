@@ -6,44 +6,51 @@ description: "Notes about regression models."
 slug: "regression-models"
 ---
 
-Regression is a statistical approach used to model the relationship between a dependent variable and a set of independent variables. It is a supervised machine learning technique that makes predictions based on a set of features or independent variables in a dataset.
+Regression is a statistical approach used to model the relationship between a dependent variable and a set of independent variables. It is a supervised machine learning technique that makes predictions based on a set of features or independent variables in a dataset. Linear coefficients of each parameter and the y-intercept are approximated through training the models with a set of training data. The final model is chosen based on which model minimizes the sum of squared residuals.
 
 <br/>
 
-# Ordinary Least Squares Linear Regression
+# Model Selection Based on Performance
 
-> $$y = B_0 + B_{p}x_{p} + \epsilon$$
+> $$MSE  = \dfrac 1n \displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2$$
 
-- Linear coefficients ($$B_1x$$) represent the increase or decrease in the dependent variable for each unit change in the independent variable.
-- The intercept ($$B_0$$) represents the average value of the dependent variable when all independent variables are set to 0.
-- The error term ($$\epsilon$$) represents the variation in predicting the dependent variable that cannot be explained or reduced, as it is beyond our control.
+- Mean squared error or 'quality of fit' quantifies how well the model is able to predict values based on input feature vectors. It assesses the average squared difference between the actual and estimated values. The smaller the MSE, the closer the fit is to the data indicating a better model.
 
-# Measuring Performance
+---
 
-> $$R^2  = 1 - \dfrac {{RSS}}{TSS}$$
+# Measuring Regression Model Accuracy
+
+> $$R^2  = \dfrac {TSS - RSS}{TSS} = 1 - \dfrac {{RSS}}{TSS}$$
 
 > $$RSS  = \displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2$$
 
 > $$TSS  = \displaystyle\sum_{i = 1}^n (y_{i} - \bar{y})^2$$
 
-- Coefficient of Determination ($R^2$) serves as a metric in assessing the effectiveness of a fitted regression line in accurately representing the distribution of data points.
-- Sum of Squared Residuals (RSS) is calculated by taking the sum of the squared difference of each $$i^{th}$$ value of the variable to be predicted minus the predicted $$y_i$$ value.
-- Total Sum of Squares (TSS) is calculated by taking the sum of the squared difference between each individual value minus the mean of all data points.
-- A good regression model will minimize the Sum of Squared Residuals (RSS) and maximize the Total Sum of Squares (TSS) which will result in a $R^2$ value closer to 1.
+- Coefficient of Determination ($R^2$) serves as a metric in assessing the effectiveness of a fitted regression line in accurately representing the distribution of data points between a range 0 - 1.
+- Sum of Squared Residuals (RSS) measures the amount of variabilty that is left unexplained after performing regression. It is calculated by taking the sum of the squared difference between the actual value minus the predicted value.
+- Total Sum of Squares (TSS) measures the inherent total variance in the response ($$Y$$) variable. Is is calculated by taking the sum of the squared difference between each individual y value minus the mean all response data points.
+- $$TSS - RSS$$ measures the amount of variability in the response that is explained through regression.
+- $$RSS / TSS$$ is the proportion of the variance that explained by the model. RSS aims to reduce the variance of the response variable and if it performs well then the RSS / TSS ratio will be small.
 
-> $$MSE  = \dfrac 1n \displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2$$
+> $$RSE = \sqrt{\dfrac {1}{n - 2} * RSS}$$
 
-- Mean squared error quantifies how well the model is able to predict values based on input feature vectors. It assesses the average squared difference between the actual and estimated values. A lower MSE indicates a better fit of the model to the data.
+- Residual Standard Error (RSE) measures the standard deviation of the residuals providing an measure of the lack of fit of the model. It represents how much that the response will deviate from the true regression line. A good regression model will minimize the Residual Standard Error (RSE).
 
-> $$MAE  = \dfrac 1n \displaystyle\sum_{i = 1}^n |y_{i} - f(x_{i})|$$
+---
 
-- Mean Absolute Error (MAE) measures the average magnitude of the errors in a set of predictions, without considering their direction. It is calculated by taking the average of the absolute difference between the actual and predicted values. A good regression model minimizes the MAE.
+# Ordinary Least Squares Linear Regression
+
+> $$y = B_0 + B_{p}x_{p} + \epsilon$$
+
+- Linear coefficients ($$B_px$$) of each parameter represent the increase or decrease in the dependent variable for each unit change in the independent variable.
+- The intercept ($$B_0$$) represents the average value of the dependent variable when all independent variables are set to 0.
+- The error term ($$\epsilon$$) represents the variation in predicting the dependent variable that cannot be explained or reduced, as it is beyond our control.
 
 ---
 
 # Ridge Regression
 
-> $$min(\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p \beta_j^2)$$
+> $$\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p \beta_j^2$$
 
 - Ridge regression is used to fit a line to our training data with a small amount of bias to prevent overfitting. In return for that small amount of bias we get a significant drop in variance resulting in a slightly worse fit Ridge regression that can provide better long-term predictions.
 - Ridge regression imposes a penalty on the size of the coefficients. We minimize a penalized residual sum of squares plus $\lambda * slope^2$. As lamda increases the penalty also increases, in order to minimize the sum of squared residuals we shrink the parameter coefficients which can only asymptotically approach zero.
@@ -54,7 +61,7 @@ Regression is a statistical approach used to model the relationship between a de
 
 # Lasso Regression
 
-> $$min(\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p |\beta_j|)$$
+> $$\displaystyle\sum_{i = 1}^n (y_{i} - f(x_{i}))^2 + \lambda \displaystyle\sum_{j = 1}^p |\beta_j|$$
 
 - Lasso regression is similar to Ridge regression in that it also introduces a small amount of bias into how the new line is fit to the data but in return for that small amount of bias we get a significant drop in variance in other words by starting with a slightly worse fit Lasso regression can provide better long-term predictions.
 - Similar to Ridge regression, Lasso regression imposes a penalty on the size of the coefficients. The lasso coefficients minimize a penalized residual sum of squares plus $\lambda * slope$. However, in contrast to Ridge regression, Lasso regression can shrink the coefficients to zero.
