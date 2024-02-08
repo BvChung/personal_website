@@ -32,9 +32,11 @@ Regression is a statistical approach used to model the relationship between a de
 - $$TSS - RSS$$ measures the amount of variability in the response that is explained through regression.
 - $$RSS / TSS$$ is the proportion of the variance that explained by the model. RSS aims to reduce the variance of the response variable and if it performs well then the RSS / TSS ratio will be small.
 
-> $$RSE = \sqrt{\dfrac {1}{n - 2} * RSS}$$
+> $$RSE = \sqrt{\dfrac {1}{n - p - 1} * RSS}$$
 
 - Residual Standard Error (RSE) measures the standard deviation of the residuals providing an measure of the lack of fit of the model. It represents how much that the response will deviate from the true regression line. A good regression model will minimize the Residual Standard Error (RSE).
+- n is the number of samples in the training data.
+- p is the number of features or independent variables used.
 
 ---
 
