@@ -7,15 +7,29 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
-		title: "Covid-19 Machine Learning Models",
-		tech: ["Python", "SciKit-Learn", "Pandas", "NumPy"],
-		link: "https://github.com/BvChung/covid-machine-learning-analysis",
+		title: "EchoAI",
+		tech: [
+			"NextJS",
+			"TypeScript",
+			"Firebase",
+			"Google Gemini",
+			"AssemblyAI",
+			"Google Cloud Storage",
+		],
+		link: "https://devpost.com/software/echoai?ref_content=user-portfolio&ref_feature=in_progress",
 		description:
-			"Machine learning models to predict the number of ICU admissions with US COVID-19 dataset.",
+			"CodeRED Genesis Hackathon 2nd Place Winner General Track. AI powered public speaking prep platform.",
+	},
+	{
+		title: "Public Health Machine Learning Models",
+		tech: ["Python", "SciKit-Learn", "Pandas", "NumPy"],
+		link: "https://github.com/BvChung/public-health-machine-learning-analysis",
+		description:
+			"Data preprocessing and analysis using machine learning models.",
 	},
 	{
 		title: "CougarCS Admin Portal",
-		tech: ["NextJS", "TypeScript", "Tailwind CSS, PostgreSQL"],
+		tech: ["NextJS", "TypeScript", "Tailwind CSS", "PostgreSQL"],
 		link: "https://github.com/CougarCS/CougarCS-AdminPortal",
 		description:
 			"An administrative dashboard designed for club officers, streamlining member and event management.",
@@ -28,9 +42,9 @@ export const projects: Project[] = [
 			"This website! Posts are written in Markdown styled with CSS and integrated through Astro.",
 	},
 	{
-		title: "Google Sheets Autobot",
+		title: "Google Sheets Event Bot",
 		tech: ["Python", "Discord.py"],
-		link: "https://github.com/BvChung/google-sheets-autobot",
+		link: "https://github.com/BvChung/g-sheet-bot",
 		description:
 			"A Discord bot integrated with Google Sheets API to upload and query spreadsheet data.",
 	},
